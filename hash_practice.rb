@@ -1,8 +1,8 @@
 class Movie
 
   attr_accessor :title, :director, :genre, :lead, :year
-  
-  def initialize(title, director, genre, lead, year)
+
+  def initialize(movie)
     @title = movie[:title]
     @director = movie[:director]
     @genre = movie[:genre]
@@ -11,7 +11,7 @@ class Movie
   end
 end
 
-movies = [
+movie = [
   { title: "Alien",
     director: "Ridley Scott",
     genre: "scifi",
@@ -24,6 +24,7 @@ movies = [
     lead: "Kurt Russell",
     year: 1982}]
 
-movies.each do |movie|
-  puts movie[:title]
+movie.each do |a|
+  film = Movie.new(a)
+  puts film.title
 end
